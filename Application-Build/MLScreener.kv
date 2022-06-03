@@ -1,0 +1,26 @@
+#:kivy 1.1.0
+<Root>:
+
+    cols: 1
+    rows: 5
+#    GridLayout:
+##        orientation: "vertical"
+    size: root.width, root.height
+    padding: 50
+    spacing: 20
+
+    Image:
+        source: 'static/images/MLScreener_logo.PNG'
+        allow_stretch: True
+
+    Label:
+#        1. Use your preferred bibliographic database to download a file that includes information about each article\'s title, abstract, keywords, and subject headings.\n2. Ensure that the title column is labelled as TI.\n3. Ensure that the abstract column is labelled as AB.\n4. Ensure that the keyword column is labelled as KW.\n5. Ensure that the subject headings column is labelled as MH.\n6. Please ensure that each uploaded file has fewer than 10,000 records. Files with more than 10,000 records will not be processed.\n7. Save your file as a .csv format.\n
+        text:'[color=3333ff][b][u][ref=https://mlscreener.s3.ca-central-1.amazonaws.com/Example_File.csv]Download an example CSV file from here.[/ref][/b][/u][/color]'
+        text_size: self.width, None
+        size_hint_y: None
+        pos_hint:{'center_x':0.5, 'y': 0.20}
+        size: (150, 44)
+        markup: True
+        on_ref_press:
+            import webbrowser
+            webbrowser.open(args[1])
